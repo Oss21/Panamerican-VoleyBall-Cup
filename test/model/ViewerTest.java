@@ -4,6 +4,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 public class ViewerTest {
@@ -22,6 +24,7 @@ public class ViewerTest {
 		
 		viewer = new Viewer(id, first_name, last_name, email, gender, country, photo, birthday);
 	}
+	
 	
 	@Test
 	public void checkGetMethods() {
@@ -62,8 +65,43 @@ public class ViewerTest {
 	}
 	
 	@Test 
-	public void testSearch() {
+	public void inorderTest() {
 		setupEscenary1();
+		Viewer a = new Viewer();
+		a.setId("A0025");
+		Viewer b = new Viewer();
+		b.setId("A0028");
+		Viewer c = new Viewer();
+		c.setId("A0020");
+		Viewer d = new Viewer();
+		d.setId("A0019");
+		ArrayList<Viewer> s =  new ArrayList<Viewer>();
+		viewer.add(a);
+		viewer.add(b);
+		viewer.add(c);
+		viewer.add(d);
+		
+		viewer.inorder(s);
+		
+		assertEquals(d, s.get(0));
+		assertEquals(c, s.get(1));
+		assertEquals(viewer, s.get(2));
+		assertEquals(a, s.get(3));
+		assertEquals(b, s.get(4));		
+	}
+	
+	@Test
+	public void checkCompareTo() {
+		setupEscenary1();
+		Viewer a = new Viewer();
+		a.setId("A0023");
+		Viewer c = new Viewer();
+		c.setId("A0025");
+		Viewer d = new Viewer();
+		d.setId("A0020");
+		assertTrue(viewer.compareTo(a)== 0);
+		assertTrue(viewer.compareTo(c) < 0);
+		assertTrue(viewer.compareTo(d) > 0);
 		
 	}
 }

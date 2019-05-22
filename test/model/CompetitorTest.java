@@ -11,10 +11,10 @@ class CompetitorTest {
 	
 	private void setupEscenary1() {
 		String id = "A0023";
-		String first_name = "Oscar";
-		String last_name = "Riascos";
-		String email = "osvan20@gmail.com";
-		String gender = "Male";
+		String first_name = "Camila";
+		String last_name = "Estupiñan";
+		String email = "camila@gmail.com";
+		String gender = "Female";
 		String country = "Colombia";
 		String photo = "url";
 		String birthday = "29/08/2018";
@@ -29,10 +29,10 @@ class CompetitorTest {
 		setupEscenary1();
 		//Prueba si el metodo devuelve el id
 		assertEquals("A0023", competitor.getId());
-		assertEquals("Oscar", competitor.getFirst_name());
-		assertEquals("Riascos", competitor.getLast_name());
-		assertEquals("osvan20@gmail.com", competitor.getEmail());
-		assertEquals("Male",competitor.getGender());
+		assertEquals("Camila", competitor.getFirst_name());
+		assertEquals("Estupiñan", competitor.getLast_name());
+		assertEquals("camila@gmail.com", competitor.getEmail());
+		assertEquals("Female",competitor.getGender());
 		assertEquals("Colombia",competitor.getCountry());
 		assertEquals("url", competitor.getPhoto());
 		assertEquals("29/08/2018", competitor.getBirthday());
@@ -57,8 +57,7 @@ class CompetitorTest {
 		assertTrue(competitor.compareTo(d) > 0);
 		
 	}
-	
-	
+
 	
 	
 	
